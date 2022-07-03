@@ -19,7 +19,6 @@ function myFunction(a, b) {
   }
   return b;
 }
-*/
 
 //関数の宣言
 function calcFunction(price, tax) {
@@ -34,5 +33,33 @@ console.log(myResult);
 function myFunction() {
   console.log('こんにちは');
 }
-
 myFunction();
+
+//関数の定義
+const calcSum = (a, b, c) => {
+  const result = a + b + c;
+  return result;
+};
+const myResult = calcSum(1, 2, 3);
+console.log(myResult);
+
+//関数の宣言
+const myFunction1 = (a) => {
+  return a + 2;
+}
+const myResult1 = myFunction1(1)
+console.log(myResult1)
+
+//関数の宣言(引数が１個の場合は括弧を省略できる)
+const myFunction2 = a => {
+  return a + 2;
+}
+const myResult2 = myFunction2(2)
+console.log(myResult2)
+
+//アロー関数内の処理が１行の場合は、{}とreturnを省略できる
+const myFunction3 = a => a + 2;
+const myResult3 = myFunction3(3)
+console.log(myResult3)
+*/
+
