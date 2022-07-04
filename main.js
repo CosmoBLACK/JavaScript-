@@ -35,6 +35,7 @@ function myFunction() {
 }
 myFunction();
 
+
 //関数の定義
 const calcSum = (a, b, c) => {
   const result = a + b + c;
@@ -61,5 +62,78 @@ console.log(myResult2)
 const myFunction3 = a => a + 2;
 const myResult3 = myFunction3(3)
 console.log(myResult3)
+
+
+function calcFunction(price, tax = 0.08) {
+  const result = price + price * tax;
+  return result;
+}
+//taxの引数を省略すると、初期値0.08が使用される
+const result1 = calcFunction(100);
+console.log(result1);
+//taxの引数を指定すると、その値が使用される
+const result2 = calcFunction(100, 0.1);
+console.log(result2);
+
+
+//不特定数の引数を受け取る関数を定義するには「...」を記述する
+//calcSum()関数ではpricesに引数が配列として格納されている
+function calcSum(...prices) {
+  let result = 0;
+  for (const value of prices) {
+    result += value;
+  }
+  return result;
+}
+const result1 = calcSum(10, 20);
+console.log(result1);
+
+
+const myPrice = 100
+if (myPrice >= 50) {
+  alert('myPriceは50以上です');
+} else if (myPrice >= 10) {
+  alert('myPriceは10以上50未満です');
+} else {
+  alert('myPriceは10未満です');
+}
+
+if (true) {
+  alert('Hello');
+}
+
+const randomNum = Math.random() * 10; //乱数×10
+if (randomNum >= 5) {
+  alert('randomNumは5以上')
+} else {
+  alert('randomNumは5未満')
+}
+
+const randomNum = Math.random() * 10;
+//ブロック内の処理が1行だけの場合、{}は省略可能
+if (randomNum >= 5) alert('randomNumは5以上');
+
+
+const myFruit = 'りんご';
+switch (myFruit) {
+  case 'りんご':
+    alert('りんごです');
+    break;
+  case 'みかん':
+    alert('みかんです');
+    break;
+  default:
+    alert('その他です');
+    break;
+}
 */
 
+const myFruit = 'りんご';
+switch (myFruit) {
+  case 'りんご':
+  case 'みかん':
+    alert('りんごかみかんです');
+    break;
+  default:
+    alert('その他です');
+}
