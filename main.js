@@ -126,7 +126,6 @@ switch (myFruit) {
     alert('その他です');
     break;
 }
-*/
 
 const myFruit = 'りんご';
 switch (myFruit) {
@@ -136,4 +135,49 @@ switch (myFruit) {
     break;
   default:
     alert('その他です');
+}
+
+
+for (let index = 0; index < 10; index++) {
+  console.log(index);
+}
+
+let myNumber = 0;
+while (myNumber < 10) {
+  console.log(myNumber);
+  myNumber += 1;
+}
+
+
+for (let index = 0; index > 10; index++) {
+  if (index % 2 === 0) {
+    //indexが偶数の場合、以降の処理はスキップ
+    continue;
+  }
+  //奇数の場合のみ出力
+  console.log(index);
+}
+//ループが終了したら実行
+console.log('ループ終了');
+
+
+const a = 10;
+const b = 20;
+console.log(a < b);
+console.log(a > b);
+*/
+//長方形
+const rectangle = document.querySelector('.rectangle');
+//ボタンをクリックしたらonClickButton()を実行する
+document.querySelector('.button').addEventListener('click', onClickButton);
+//ボタンをクリックするたびにグラデーションが変わる
+function onClickButton() {
+  //0~359のランダムな数を取得
+  const randomHue = Math.trunc(Math.random() * 360);
+  //グラデーションの開始色と終了色の指定
+  const randomColorStart = 'hsl(${randomHue}, 100%, 50%)';
+  const randomColorEnd = 'hsl(${randomHue + 40}, 100%, 50%)';
+  
+  rectangle.style.setProperty('--start', randomColorStart);
+  rectangle.style.setProperty('--end', randomColorEnd);
 }
