@@ -165,19 +165,30 @@ const a = 10;
 const b = 20;
 console.log(a < b);
 console.log(a > b);
+
+
+const array1 = [];
+const array2 = [0, 2, 8];
+const array3 = ['鈴木', '高橋'];
+const array4 = [1, '鈴木', false];
+const array5 = [[1, 1, 1], [2, 2, 2]];
+const array6 = [{ id: 1, name: '鈴木'}, { id: 2, name: '鈴木'}];
+console.log(array6);
+console.log(array5.length);
+
+const array = ['いちご','みかん','りんご'];
+array.forEach((value, index) => {
+  console.log(index, value);
+})
 */
-//長方形
-const rectangle = document.querySelector('.rectangle');
-//ボタンをクリックしたらonClickButton()を実行する
-document.querySelector('.button').addEventListener('click', onClickButton);
-//ボタンをクリックするたびにグラデーションが変わる
-function onClickButton() {
-  //0~359のランダムな数を取得
-  const randomHue = Math.trunc(Math.random() * 360);
-  //グラデーションの開始色と終了色の指定
-  const randomColorStart = 'hsl(${randomHue}, 100%, 50%)';
-  const randomColorEnd = 'hsl(${randomHue + 40}, 100%, 50%)';
-  
-  rectangle.style.setProperty('--start', randomColorStart);
-  rectangle.style.setProperty('--end', randomColorEnd);
-}
+const userList = [
+  { id: 1, name: '田中', address: '東京'},
+  { id: 2, name: '鈴木', address: '宮城'},
+  { id: 3, name: '高橋', address: '福岡'}
+];
+
+const container = document.querySelector('.container');
+
+userList.forEach((userData) => {
+  container.innerHTML += `<div class="card"><h2>${userData.name}</h2><p>出身地:${userData.address}</p></div>`;
+});
